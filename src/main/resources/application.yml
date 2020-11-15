@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: provider
+server:
+  port: 8080
+provider:
+  name: provider0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node1:8081/eureka/,http://node2:8082/eureka/,http://node3:8082/eureka/
