@@ -1,11 +1,23 @@
 spring:
   application:
     name: provider
+  sleuth:
+    sampler:
+      probability: 1
+
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web
+
 server:
   port: 8002
-provider:
-  name: provider2
+
 eureka:
   client:
     service-url:
       defaultZone: http://node1:8081/eureka/,http://node2:8082/eureka/,http://node3:8082/eureka/
+
+logging:
+  level:
+    org.springframewok.cloud: debug
